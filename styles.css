@@ -21,16 +21,20 @@ ul{
 
 .nav-class{
 	display: flex;
+	background-color: #fff;
 }
 
 #sticky{
 	position: sticky;
 	top: 0;
-	background-color: #fff;
+	
+}
+
+.nav-links{
+	margin-left: auto;
 }
 
 .nav-list{
-	margin-left: auto;
 	display: flex;
 }
 
@@ -41,6 +45,24 @@ ul{
 #nav-link:hover{
 	color: #c2a43b;
 	transition: all 0.2s ease-in;	
+}
+
+.toggle-btn{
+	position: absolute;
+	top: 0.75rem;
+	right: 1rem;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 21px;
+}
+
+.toggle-btn .bar{
+	height: 3px;
+	width: 100%;
+	background-color: #000;
+	border-radius: 10px;
 }
 
 /*Wall*/
@@ -210,7 +232,6 @@ footer{
 .footer-list{
 	display: flex;
 	justify-content: center;
-	border-bottom: 1px solid #000;
 	width: 60%;
 	margin: auto;
 }
@@ -241,8 +262,41 @@ footer{
 
 /*Navbar responsive*/
 @media (max-width: 680px){
-	.nav-list{
+	.nav-links{
 		display: none;
+	}
+
+	.toggle-btn{
+		display: flex;
+	}
+
+	.nav-class{
+		flex-direction: column;
+	}
+
+	.nav-item{
+		margin: 0.5em 0;
+	}
+
+	.nav-list{
+		padding: 0;
+	}	
+
+	.nav-links{
+		width: 100%;
+	}
+
+	.nav-links .nav-list{
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.nav-item{
+		text-align: center;
+	}
+
+	.nav-links.active{
+		display: flex;
 	}
 }
 
